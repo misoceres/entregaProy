@@ -18,6 +18,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(fileUpload());
 app.use(cors(corsOptions));
 app.use(require('./rutas/index'));
+app.use('/usr',require('./rutas/usuario'));
 app.use('/postulante',require('./rutas/postulante'));
 app.use('/convocatoria',require('./rutas/convocatoria'));
 
