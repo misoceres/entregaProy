@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const storage =  new Vuex.Store({
   state: {
     usuario:'',
     idusr:0,
     nombre:'',
     tipo:0,
   },
-  getters: {
-  },
+  // getters: {
+  // },
   mutations: {
     SetUsuario(state,value){
       state.usuario = value;
@@ -26,8 +27,15 @@ export default new Vuex.Store({
       state.tipo = value;
     },
   },
-  actions: {
-  },
-  modules: {
-  }
+  plugins: [
+    new VuexPersistence({
+      storage:window.localStorage
+    }).plugin
+  ]
+  // actions: {
+  // },
+  // modules: {
+  // }
 })
+
+export default storage;

@@ -6,6 +6,7 @@ import RegistroPost from '@/components/RegistroPost.vue'
 import LisConvocatorias from '@/components/LisConvocatorias.vue'
 import LisHabilitados from '@/components/LisHabilitados.vue'
 import BienvenidoUsuario from '@/components/BienvenidoUsuario.vue'
+import GestionUsuarios from '@/components/GestionUsuarios.vue'
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,11 @@ const routes = [
     path: '/usr',
     name: 'bienvenidoUsr',
     component: BienvenidoUsuario
+  },
+  {
+    path: '/usr/gestion',
+    name: 'gestionusuarios',
+    component: GestionUsuarios
   },
 ]
 
