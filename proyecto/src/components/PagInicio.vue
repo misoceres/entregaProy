@@ -49,8 +49,8 @@
             verificar(){
                 this.axios.post('/usr/login',this.form)
                 .then(r =>{
-                    this.axios.defaults.headers.common.authorization = r.data.token;
-                    localStorage.setItem('token',r.data.toeken);
+                    this.axios.defaults.headers.common.authorization = "Bearer."+r.data.token;
+                    localStorage.setItem('token',"Bearer."+r.data.toeken);
                     this.$store.commit('SetUsuario',r.data.userdata.usuario);
                     this.$store.commit('SetIdusr',r.data.userdata.id);
                     this.$store.commit('Setnombre',r.data.userdata.nombre);

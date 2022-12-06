@@ -34,8 +34,8 @@
 
         <b-table striped hover :items="usuarios" :fields="campos" stacked="md" show-empty small>
             <template #cell(actions)="row">
-                <b-button variant="primary" size="sm" @click="modificar(row.item)" class="mr-1">Modificar</b-button>
-                <b-button variant="danger" size="sm" @click="borrar(row.item)" class="mr-1">Borrar</b-button>
+                <b-button variant="primary" size="sm" @click="modificar(row.item)" class="mr-1 mx-1">Modificar</b-button>
+                <b-button variant="danger" size="sm" @click="borrar(row.item)" class="mr-1 mx-1">Borrar</b-button>
             </template>
         </b-table>
     </div>
@@ -101,7 +101,10 @@
         mounted(){
             this.cargar();
         },
-        
+        beforeMount(){
+            if(!this.$store.state.tipo==1) this.$router.push('/');
+        }
+
         
     }
 </script>

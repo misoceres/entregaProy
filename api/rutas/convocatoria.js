@@ -3,5 +3,6 @@ const ruta = express.Router();
 const cconvocatoria = require('../controladores/convocatoria');
 
 ruta.get('/listar',cconvocatoria.listar);
+ruta.post('/agregar',cconvocatoria.agregar);
 
 module.exports=ruta;
